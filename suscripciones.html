@@ -60,6 +60,7 @@
     		background-size: cover;
     		background-position: center;
     		width: 100vw;
+		height: auto;
     		position: relative;
     		margin-left: calc(50% - 50vw);
     		text-align: center;
@@ -299,6 +300,25 @@
         .store-button {
             height: 40px;
         }
+	
+.about-hero, .about-section {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+	.video-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.video-container video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
 @media (min-width: 1024px) {
     .header-banner {
@@ -318,6 +338,26 @@
         transform: scale(1.16);
     }
 }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                margin: 0 auto 1rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -339,15 +379,14 @@
             <li><a href="suscripciones.html">Suscripciones</a></li>
         </ul>
     </nav>
-
     
     <main>
     <div class="header-banner">
         <div class="header-banner-content">
-
         <img src="banner.png" alt="Logo" class="header-banner">
     </div>
     </div>
+
         <div class="subscription-card">
             <h2 class="subscription-title">PettyPlus</h2>
             <div class="subscription-price">S/19.90/mes</div>
@@ -621,10 +660,9 @@
                 <h3>¡VISITA NUESTRAS REDES!</h3>
                 <div class="social-links">
                     <a href="https://www.instagram.com/pet.supplies.onlinee">Instagram</a>
-                    <a href="https://facebook.com/">Facebook</a>
+                    <a href="https://www.facebook.com/profile.php?id=61567874892106">Facebook</a>
                 </div>
             </div>
         </div>
     </footer>
-
 </html>

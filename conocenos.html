@@ -214,6 +214,18 @@
             width: 200px;
             margin-bottom: 1rem;
         }
+	.banner-logopres {
+	    background-size: cover;
+            width: 100vw;
+	    height: auto;
+            margin-bottom: 1rem;
+	    position: relative;
+	    margin-left: calc(50%-50vw);
+	    text.align: center;
+	    margin: 20px auto;
+	    max-width: 800px;
+	    padding: 20px;
+        }
 
         .footer-section h3 {
             color: #1a472a;
@@ -301,9 +313,11 @@
             height: 40px;
         }
 	
-	.about-hero, .about-section {
+.about-hero, .about-section {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
 }
 
 	.video-container {
@@ -316,6 +330,13 @@
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .banner-logopres {
+	margin-left: calc(50% - 50vw);
+        transform: scale(0.95); /* Incremento de tamaño del 20% */
+    }
 }
 
 @media (min-width: 1024px) {
@@ -386,17 +407,17 @@
     </div>
         <div class="about-hero">
             <h1>¿Quiénes Somos?</h1>
-            <p>Tu tienda de confianza para todas las necesidades de tus mascotas (texto ejemplo)</p>
+            <p>Somos tu tienda en línea de confianza para todas las necesidades de tus mascotas. Nos especializamos en ofrecer productos de calidad, como alimentos, juguetes, accesorios, y más, para asegurar el bienestar y satisfacción de tu mascota. Nuestro enfoque está en la conveniencia y precios competitivos, con opciones de entrega a domicilio y suscripciones para productos esenciales.</p>
         </div>
 
         <div class="about-section">
             <div class="about-content">
                 <div>
                     <h2>Nuestra Historia</h2>
-                    <p>Desde 2024, nos dedicamos a proporcionar los mejores productos para mascotas... (texto ejemplo)</p>
+                    <p>Desde 2024, nos dedicamos a proporcionar los mejores productos para el cuidado de mascotas. Nacimos con el objetivo de ser una plataforma accesible y confiable, ofreciendo una amplia variedad de productos para perros, gatos, aves, peces y otros animales. Hemos trabajado para crear una experiencia de compra segura y agradable, respaldada por un compromiso con la calidad y frescura de nuestros productos.</p>
                 </div>
-                <div>
-                    <img src="/api/placeholder/400/300" alt="Banner de Tienda">
+                <div class="banner-logopres">
+                    <img src="bannerlogo.png" alt="Banner de Tienda" class="banner-logopres">
                 </div>
             </div>
 
@@ -410,10 +431,10 @@
             <div class="about-content">
                 <div>
                     <h2>Nuestro Compromiso</h2>
-                    <p>Nos comprometemos a ofrecer productos de la más alta calidad... (texto ejemplo)</p>
+                    <p>Nos comprometemos a brindar productos de alta calidad y frescura para asegurar la salud de tu mascota. Además, nos esforzamos por ofrecer una experiencia de compra segura y confiable, con métodos de pago variados y un sistema de autenticación que protege tus datos. Nuestro equipo trabaja para asegurar entregas puntuales y mantener una buena reputación, basándonos en reseñas y comentarios de nuestros clientes, para seguir mejorando constantemente.</p>
                 </div>
                 <div>
-                    <img src="/api/placeholder/400/300" alt="Nuestro equipo">
+                    <img src="mascotas.png" alt="Nuestro equipo" class="banner-logopres">
                 </div>
             </div>
         </div>
@@ -657,24 +678,24 @@
             </div>
             <div class="footer-section">
                 <h3>CONTACTO</h3>
-                <p>Instagram - @nombreig</p>
-                <p>Facebook - nombrefb</p>
+                <p>Instagram - @pet.supplies.onlinee</p>
+                <p>Facebook - Pet Supplies Online</p>
                 <p>Web</p>
             </div>
             <div class="footer-section">
                 <h3>CORREO</h3>
-                <p>correoejemplo.com</p>
+                <p>petsuppliesonline@gmail.com</p>
             </div>
             <div class="footer-section">
                 <h3>UBICACIÓN</h3>
-                <p>Av. Esmeraldas 265,</p>
-                <p>San Borja</p>
+                <p>Av. La Fontana 750,</p>
+                <p>La Molina</p>
             </div>
             <div class="footer-section">
                 <h3>¡VISITA NUESTRAS REDES!</h3>
                 <div class="social-links">
-                    <a href="https://instagram.com/faltalink">Instagram</a>
-                    <a href="https://facebook.com/faltalink">Facebook</a>
+                    <a href="https://www.instagram.com/pet.supplies.onlinee">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61567874892106">Facebook</a>
                 </div>
             </div>
         </div>
