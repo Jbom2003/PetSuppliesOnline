@@ -128,6 +128,36 @@ overflow-x: hidden;
             margin: 0 auto;
         }
 
+.mascotas-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.mascotas-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+.mascotas-content.show {
+    display: block;
+}
+
+.mascota-item {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.mascota-item:hover {
+    background-color: #f0f0f0;
+}
+
+
         .product-card {
             background: white;
             border-radius: 10px;
@@ -368,17 +398,31 @@ overflow-x: hidden;
 <body>
     <nav>
         <ul class="nav-links">
-            <li><a href="index.html" href="#" onclick="resetFilters()">Home</a></li>
-            <li><a href="index.html" onclick="filterProducts('perro')">Perro</a></li>
-            <li><a href="index.html" onclick="filterProducts('gato')">Gato</a></li>
-            <li><a href="index.html" onclick="filterProducts('ave')">Aves</a></li>
+            <li><a href="index.html" onclick="resetFilters()">Home</a></li>
+<li>
+    <div class="mascotas-dropdown">
+        <a a href="index.html" onclick="toggleMascotas()">Mascotas</a>
+        <div id="mascotasDropdown" class="mascotas-content">
+            <div class="mascota-item" onclick="filterProducts('perro')">Perros</div>
+            <div class="mascota-item" onclick="filterProducts('gato')">Gatos</div>
+            <div class="mascota-item" onclick="filterProducts('ave')">Aves</div>
+            <div class="mascota-item" onclick="filterProducts('hamster')">Hámsteres</div>
+            <div class="mascota-item" onclick="filterProducts('serpiente')">Serpientes</div>
+            <div class="mascota-item" onclick="filterProducts('pez')">Peces</div>
+            <!-- Agrega más opciones según sea necesario -->
+        </div>
+    </div>
+</li>
+	
+
             <li><div class="brands-dropdown">
-                <a href="index.html" onclick="toggleBrands()">Marcas</a>
+                <a a href="index.html" onclick="toggleBrands()">Marcas</a>
                 <div id="brandsDropdown" class="brands-content">
                     <!-- Se llenará dinámicamente -->
                 </div>
             </div></li>
-            <li><a href="index.html" onclick="showDiscountedOnly()">Ofertas</a></li>
+
+            <li><a a href="index.html" onclick="showDiscountedOnly()">Ofertas</a></li>
             <li><a href="conocenos.html">Conócenos</a></li>
             <li><a href="suscripciones.html">Suscripciones</a></li>
         </ul>
@@ -637,6 +681,41 @@ overflow-x: hidden;
                 }
             }
         }
+// Función para mostrar/ocultar el menú de "Otras Mascotas"
+function toggleMascotas() {
+    const dropdown = document.getElementById('mascotasDropdown');
+    dropdown.classList.toggle('show');
+}
+
+// Cierra el menú de "Otras Mascotas" si se hace clic fuera
+window.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('mascotasDropdown');
+    const dropdownButton = document.querySelector('.mascotas-dropdown a');
+
+    // Verifica que el clic no sea en el menú o en el botón de "Otras Mascotas"
+    if (!dropdown.contains(event.target) && !dropdownButton.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
+
+function toggleMascotas() {
+    const dropdown = document.getElementById('mascotasDropdown');
+    dropdown.classList.toggle('show');
+}
+
+// Cierra el menú cuando se hace clic fuera
+window.onclick = function(event) {
+    if (!event.target.matches('.mascotas-dropdown a')) {
+        const dropdowns = document.getElementsByClassName('mascotas-content');
+        for (let dropdown of dropdowns) {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+            }
+        }
+    }
+};
+
+
     </script>
 
 </body>
